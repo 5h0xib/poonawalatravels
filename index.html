@@ -13,6 +13,7 @@
   <meta name="author" content="Poona Wala Travels Cab Service" />
   <meta name="robots" content="index, follow" />
 
+  <link rel="icon" href="./images/x.webp" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Poona Wala Cab Service</title>
 
@@ -115,7 +116,7 @@
                 </h1>
               </div>
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
+                <ol id="main-form" class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -123,7 +124,7 @@
                   <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                 </ol>
-                <div id="main-form" class="carousel-inner">
+                <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="img-box">
                       <img style="margin-left: -10px;" src="images/dezire.webp" alt="">
@@ -163,24 +164,46 @@
               <h4>
                 Get A Cab Now
               </h4>
-              <form action="">
-                <select required>
+              <form action="https://api.web3forms.com/submit?redirect=https://woxflow.in/success.html" method="post">
+                <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+                <input type="hidden" name="redirect" value="https://5h0xib.github.io/poonawalatravels/success.html">
+                <input type="hidden" name="subject" value="Website Cab Request">
+
+                <select name="Transport type" required>
                   <option value="" disabled selected>Select Car Type</option>
                   <option value="SEDAN">SEDAN – ₹12/km</option>
                   <option value="ERTIGA">ERTIGA – ₹15/km</option>
                   <option value="KIA CAREENS">KIA CAREENS – ₹16/km</option>
                   <option value="INNOVA">INNOVA – ₹18/km</option>
                   <option value="INNOVA CRYSTA">INNOVA CRYSTA – ₹20/km</option>
-                  <option value="Tempo AC">Tempo Traveler 17 Seater (AC) – ₹30/km</option>
-                  <option value="Tempo NonAC">Tempo Traveler 17 Seater (Non-AC) – ₹27/km</option>
+                  <option value="Traveler AC">Traveler 17 Seater (AC) – ₹30/km</option>
+                  <option value="Traveler NonAC">Traveler 17 Seater (Non-AC) – ₹27/km</option>
                   <option value="URBANIA">URBANIA 17 Seater Push Back – ₹35/km</option>
+                  <option value="" disabled>Pune to Mumbai - One Way</option>
+                  <option value="Sedan Pune-Mumbai">Sedan - ₹2500</option>
+                  <option value="Ertiga Pune-Mumbai">Ertiga - ₹3500</option>
+                  <option value="Innova Pune-Mumbai">Innova - ₹4500</option>
+                  <option value="Innova Crysta Pune-Mumbai">Innova Crysta - ₹5500</option>
                 </select>
                 
-                <input type="text" placeholder="Pick Up Location" required>
-                <input type="text" placeholder="Drop Location" required>
+                <input name="Pick Up Location" type="text" placeholder="Pick Up Location" required>
+                <input name="Drop Location" type="text" placeholder="Drop Location" required>
                 
+                <div class="DT-input">
+                  <div class="date-input">
+                    <label for="dateInput" style="color: #f0f0f0;">Select Date</label>
+                    <input name="date" type="date" id="dateInput" required>
+                  </div>
+
+                  <div class="time-input">
+                    <label for="timeInput" style="color: #f0f0f0;">Select Time</label>
+                    <input name="time" type="time" id="timeInput" required>
+                  </div>
+                </div>
+                
+
                 <div class="btm_input">
-                  <input type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
+                  <input name="phone" type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
                   <button type="submit">Book Now</button>
                 </div>
               </form>
@@ -188,14 +211,12 @@
               <style>
                 form select{
                   width: 100%;
-                  padding: 10px;
                   margin-bottom: 20px;
                   border-radius: 5px;
                   border: 1px solid #ccc;
                 }
                 form input {
                   width: 100%;
-                  padding: 10px;
                   border-radius: 5px;
                   border: 1px solid #ccc;
                 }
@@ -211,12 +232,6 @@
               
                 form button:hover {
                   background-color: #a37a00;
-                }
-              
-                .btm_input {
-                  display: flex;
-                  gap: 10px;
-                  flex-wrap: wrap;
                 }
               
                 .btm_input input {
@@ -327,7 +342,7 @@
           
             <!-- SEDAN -->
             <div class="car-card">
-              <img src="images/dezire.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/dezire.webp" alt="dezire" class="car-img">
             
               <div class="car-details">
                 <h4>Sedan</h4>
@@ -346,13 +361,13 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="SEDAN">Book Now</a>
               </div>
             </div>
 
             <!-- ERTIGA -->
             <div class="car-card">
-              <img src="images/ertiga.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/ertiga.webp" alt="ertiga" class="car-img">
             
               <div class="car-details">
                 <h4>Ertiga</h4>
@@ -371,13 +386,13 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="ERTIGA">Book Now</a>
               </div>
             </div>
 
             <!-- KIA CAREENS -->
             <div class="car-card">
-              <img src="images/kia.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/kia.webp" alt="kia CAREENS" class="car-img">
             
               <div class="car-details">
                 <h4>Kia Carens</h4>
@@ -396,13 +411,13 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="KIA CAREENS">Book Now</a>
               </div>
             </div>
 
             <!-- INNOVA -->
             <div class="car-card">
-              <img src="images/innova.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/OGinnova.webp" alt="Innova" class="car-img">
             
               <div class="car-details">
                 <h4>Innova</h4>
@@ -421,7 +436,7 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="INNOVA">Book Now</a>
               </div>
             </div>
 
@@ -446,13 +461,13 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="INNOVA CRYSTA">Book Now</a>
               </div>
             </div>
             
             <!-- TRAVELLER -->
             <div class="car-card">
-              <img src="images/traveller.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/traveller.webp" alt="Traveller" class="car-img">
             
               <div class="car-details">
                 <h4>Traveller(A/C)</h4>
@@ -471,13 +486,13 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="Traveler AC">Book Now</a>
               </div>
             </div>
 
             <!-- TRAVELLER NO AC -->
             <div class="car-card">
-              <img src="images/traveller.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/traveller.webp" alt="Traveller no Ac" class="car-img">
             
               <div class="car-details">
                 <h4>Traveller(non-A/C)</h4>
@@ -496,12 +511,12 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="Traveler NonAC">Book Now</a>
               </div>
             </div>
 
             <div class="car-card">
-              <img src="images/urbania.webp" alt="Innova Crysta" class="car-img">
+              <img src="images/urbania.webp" alt="urbania" class="car-img">
             
               <div class="car-details">
                 <h4>Urbania</h4>
@@ -520,7 +535,192 @@
                   <span>⛽ Petrol</span>
                 </div>
             
-                <a href="#main-form" class="call-btn">Book Now</a>
+                <a href="#main-form" class="call-btn book-now-btn" data-value="URBANIA">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .fare-table-container {
+        padding: 35px;
+        padding-top: 50px;
+      }
+    
+      .fare-table {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 15px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    
+      .fare-table th,
+      .fare-table td {
+        padding: 12px;
+        text-align: center;
+        background-color: #fff;
+      }
+    
+      .fare-table th {
+        background-color: #f0f0f0;
+        font-size: 16px;
+      }
+    
+      .fare-table tr:nth-child(even) td {
+        background-color: #fafafa;
+      }
+    
+      .fare-table .btn {
+        padding: 6px 14px;
+        font-size: 14px;
+        background-color: #f7c621;
+        color: white;
+        border: none;
+        border-radius: 60px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    
+      .fare-table .btn:hover {
+        background-color: #f7c621;
+      }
+    </style>
+    
+    <div class="fare-table-container">
+      <table class="fare-table">
+        <thead>
+          <tr>
+            <th colspan="3">Pune to Mumbai - One Way</th>
+          </tr>
+          <tr>
+            <th>Car Type</th>
+            <th>Fare</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sedan</td>
+            <td>₹2500</td>
+            <td><a href="#main-form" class="btn book-now-btn" data-value="Sedan Pune-Mumbai">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>Ertiga</td>
+            <td>₹3500</td>
+            <td><a href="#main-form" class="btn book-now-btn" data-value="Ertiga Pune-Mumbai">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>Innova</td>
+            <td>₹4500</td>
+            <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Pune-Mumbai">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>Crysta</td>
+            <td>₹5500</td>
+            <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Crysta Pune-Mumbai">Book Now</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+    
+  </section>
+
+  <!-- end cabs section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What our<br>
+          Client <br>
+          Say
+        </h2>
+      </div>
+      <p style="text-align: center;">Below reviews are based on google reviews</p>
+      <div class="client_container">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="images/dp2.webp" alt="">
+                </div>
+                <div class="detail-box">
+                  <h3>
+                    Prakash
+                  </h3>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <p>
+                    Nice and timely excellent service. Driver s are also so cooperative and skilled.I preferred to book again on next event
+                  </p>
+                  <img src="images/quote.png" alt="">
+                </div>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="images/dp3.webp" alt="">
+                </div>
+                <div class="detail-box">
+                  <h3>
+                    Abdul husain
+                  </h3>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <p>
+                    The driver came on time and was helpful... Car was very clean and well maintained.. Very satisfied with the services
+                  </p>
+                  <img src="images/quote.png" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="images/dp1.webp" alt="">
+                </div>
+                <div class="detail-box">
+                  <h3>
+                    Asma parekh
+                  </h3>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <p>
+                    Driver was polite and very well trained..
+                    Ride was smooth and we reached our destination without hassel.thank you
+                  </p>
+                  <img src="images/quote.png" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="images/dp4.webp" alt="">
+                </div>
+                <div class="detail-box">
+                  <h3>
+                    Parag Bujone
+                  </h3>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <p>
+                    I had hired a cab for Pune to Mumbai.
+                    Cab was on time , punctual and reliable.
+                    Highly recommended.
+                  </p>
+                  <img src="images/quote.png" alt="">
+                </div>
               </div>
             </div>
           </div>
@@ -529,7 +729,7 @@
     </div>
   </section>
 
-  <!-- end cabs section -->
+  <!-- end client section -->
 
   <!-- contact section -->
 
@@ -549,10 +749,13 @@
             <h4 style="text-align: center;" >
               Get In touch
             </h4>
-            <form action="">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Phone Number">
-              <input type="text" placeholder="Message" class="message_input">
+            <form action="https://api.web3forms.com/submit?redirect=https://woxflow.in/success.html" method="post">
+              <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+              <input type="hidden" name="redirect" value="https://5h0xib.github.io/poonawalatravels/success.html">
+              <input type="hidden" name="subject" value="Website Contact Request">
+              <input name="name" type="text" placeholder="Name">
+              <input name="Phone" type="text" placeholder="Phone Number">
+              <input name="Message" type="text" placeholder="Message" class="message_input">
               <button>Send</button>
             </form>
           </div>
@@ -567,7 +770,7 @@
   </section>
   <!-- end contact section -->
 
-  <!-- app section -->
+  <!-- contact section -->
 
   <section class="app_section layout_padding2">
     <div class="container">
@@ -656,7 +859,7 @@
     </div>
   </section>
 
-  <!-- end app section -->
+  <!-- contact section -->
 
   <!-- why section -->
 
@@ -790,7 +993,6 @@
     justify-content: center;
     align-items: center;
   }
-  .phone-float
   .phone-float:hover {
     color: white;
     transform: scale(1.1);
@@ -864,5 +1066,51 @@
   <!-- end owl carousel script -->
 
 </body>
+<script>
+  document.querySelectorAll('.book-now-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const selectedValue = this.getAttribute('data-value');
+      const select = document.querySelector('form select');
 
+      // Set the value in dropdown
+      select.value = selectedValue;
+
+      const formElement = document.querySelector('#main-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  const dateInput = document.getElementById("dateInput");
+  const timeInput = document.getElementById("timeInput");
+
+  function updateDateTimeLimits() {
+    const now = new Date();
+
+    // Format date as YYYY-MM-DD
+    const year = now.getFullYear();
+    const month = (`0${now.getMonth() + 1}`).slice(-2);
+    const day = (`0${now.getDate()}`).slice(-2);
+    const today = `${year}-${month}-${day}`;
+
+    // Set min date to today
+    dateInput.min = today;
+
+    // Listen for date change
+    dateInput.addEventListener("change", function () {
+      if (this.value === today) {
+        // Format time as HH:MM (24-hour)
+        const hours = (`0${now.getHours()}`).slice(-2);
+        const minutes = (`0${now.getMinutes()}`).slice(-2);
+        timeInput.min = `${hours}:${minutes}`;
+      } else {
+        timeInput.removeAttribute("min");
+      }
+    });
+  }
+
+  updateDateTimeLimits();
+</script>
 </html>
