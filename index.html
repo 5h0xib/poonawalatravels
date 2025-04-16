@@ -56,7 +56,7 @@
           <div id="navBar">
             <a class="navbar-brand" href="index.html">
               <span id="logo-img">
-                <img style="height: 100px;" src="./images/logo.webp" alt="">
+                <img style="height: 120px;" src="./images/logo.webp" alt="">
               </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -160,85 +160,90 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-5 ">
-            <div class="slider_form">
-              <h4>
-                Get A Cab Now
-              </h4>
-              <form action="https://api.web3forms.com/submit?redirect=https://woxflow.in/success.html" method="post">
-                <input type="hidden" name="access_key" value="17b438af-33c4-4bfc-9eab-de72f30cfb0a">
-                <input type="hidden" name="redirect" value="https://5h0xib.github.io/poonawalatravels/success.html">
-                <input type="hidden" name="subject" value="Website Cab Request">
-
-                <select name="Transport type" required>
-                  <option value="" disabled selected>Select Car Type</option>
-                  <option value="SEDAN">SEDAN – ₹12/km</option>
-                  <option value="ERTIGA">ERTIGA – ₹15/km</option>
-                  <option value="KIA CAREENS">KIA CAREENS – ₹16/km</option>
-                  <option value="INNOVA">INNOVA – ₹18/km</option>
-                  <option value="INNOVA CRYSTA">INNOVA CRYSTA – ₹20/km</option>
-                  <option value="Traveler AC">Traveler 17 Seater (AC) – ₹30/km</option>
-                  <option value="Traveler NonAC">Traveler 17 Seater (Non-AC) – ₹27/km</option>
-                  <option value="URBANIA">URBANIA 17 Seater Push Back – ₹35/km</option>
-                  <option value="" disabled>Pune to Mumbai - One Way</option>
-                  <option value="Sedan Pune-Mumbai">Sedan - ₹2500</option>
-                  <option value="Ertiga Pune-Mumbai">Ertiga - ₹3500</option>
-                  <option value="Innova Pune-Mumbai">Innova - ₹4500</option>
-                  <option value="Innova Crysta Pune-Mumbai">Innova Crysta - ₹5500</option>
-                </select>
-                
-                <input name="Pick Up Location" type="text" placeholder="Pick Up Location" required>
-                <input name="Drop Location" type="text" placeholder="Drop Location" required>
-                
-                <div class="DT-input">
-                  <div class="date-input">
-                    <label for="dateInput" style="color: #f0f0f0;">Select Date</label>
-                    <input name="date" type="date" id="dateInput" required>
-                  </div>
-
-                  <div class="time-input">
-                    <label for="timeInput" style="color: #f0f0f0;">Select Time</label>
-                    <input name="time" type="time" id="timeInput" required>
-                  </div>
-                </div>
-                
-
-                <div class="btm_input">
-                  <input name="phone" type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
-                  <button type="submit">Book Now</button>
-                </div>
-              </form>
-              
-              <style>
-                form select{
-                  width: 100%;
-                  margin-bottom: 20px;
-                  border-radius: 5px;
-                  border: 1px solid #ccc;
-                }
-                form input {
-                  width: 100%;
-                  border-radius: 5px;
-                  border: 1px solid #ccc;
-                }
-              
-                form button {
-                  border-radius: 5px;
-                  padding: 5px 20px;
-                  background-color: #ffc107;
-                  border: none;
-                  color: #fff;
-                  cursor: pointer;
-                }
-              
-                form button:hover {
-                  background-color: #a37a00;
-                }
-              
-                .btm_input input {
-                  flex: 1;
-                }
-              </style>              
+            <div class="fare-table-container">
+              <table class="fare-table">
+                <thead>
+                  <tr>
+                    <th colspan="3">One Way<br>Pune to Mumbai</th>
+                  </tr>
+                  <tr>
+                    <th>Car Type</th>
+                    <th>Fare</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sedan</td>
+                    <td>₹2500</td>
+                    <td><a href="#main-form" class="btn book-now-btn" data-value="Sedan Pune-Mumbai">Book Now</a></td>
+                  </tr>
+                  <tr>
+                    <td>Ertiga</td>
+                    <td>₹3500</td>
+                    <td><a href="#main-form" class="btn book-now-btn" data-value="Ertiga Pune-Mumbai">Book Now</a></td>
+                  </tr>
+                  <tr>
+                    <td>Innova</td>
+                    <td>₹4500</td>
+                    <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Pune-Mumbai">Book Now</a></td>
+                  </tr>
+                  <tr>
+                    <td>Crysta</td>
+                    <td>₹5500</td>
+                    <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Crysta Pune-Mumbai">Book Now</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+          </div>
+          <div class="slider_form">
+            <h4>
+              Get A Cab Now
+            </h4>
+            <form action="https://api.web3forms.com/submit" method="post">
+              <input type="hidden" name="access_key" value="17b438af-33c4-4bfc-9eab-de72f30cfb0a">
+              <input type="hidden" name="redirect" value="https://poonawalacabservices.in/success.html">
+              <input type="hidden" name="subject" value="Website Cab Request">
+
+              <select name="Transport type" required>
+                <option value="" disabled selected>Select Car Type</option>
+                <option value="SEDAN">SEDAN – ₹12/km</option>
+                <option value="ERTIGA">ERTIGA – ₹15/km</option>
+                <option value="KIA CAREENS">KIA CAREENS – ₹16/km</option>
+                <option value="INNOVA">INNOVA – ₹18/km</option>
+                <option value="INNOVA CRYSTA">INNOVA CRYSTA – ₹20/km</option>
+                <option value="Traveler AC">Traveler 17 Seater (AC) – ₹30/km</option>
+                <option value="Traveler NonAC">Traveler 17 Seater (Non-AC) – ₹27/km</option>
+                <option value="URBANIA">URBANIA 17 Seater Push Back – ₹35/km</option>
+                <option value="" disabled>Pune to Mumbai - One Way</option>
+                <option value="Sedan Pune-Mumbai">Sedan - ₹2500</option>
+                <option value="Ertiga Pune-Mumbai">Ertiga - ₹3500</option>
+                <option value="Innova Pune-Mumbai">Innova - ₹4500</option>
+                <option value="Innova Crysta Pune-Mumbai">Innova Crysta - ₹5500</option>
+              </select>
+              
+              <input name="Pick Up Location" type="text" placeholder="Pick Up Location" required>
+              <input name="Drop Location" type="text" placeholder="Drop Location" required>
+              
+              <div class="DT-input">
+                <div class="date-input">
+                  <label for="dateInput" style="color: #f0f0f0;">Select Date</label>
+                  <input name="date" type="date" id="dateInput" required>
+                </div>
+
+                <div class="time-input">
+                  <label for="timeInput" style="color: #f0f0f0;">Select Time</label>
+                  <input name="time" type="time" id="timeInput" required>
+                </div>
+              </div>
+              
+
+              <div class="btm_input">
+                <input name="phone" type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
+                <button type="submit">Book Now</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -542,94 +547,6 @@
         </div>
       </div>
     </div>
-    <style>
-      .fare-table-container {
-        padding: 35px;
-        padding-top: 50px;
-      }
-    
-      .fare-table {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        border-collapse: separate;
-        border-spacing: 0;
-        font-family: Arial, sans-serif;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        font-size: 15px;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-    
-      .fare-table th,
-      .fare-table td {
-        padding: 12px;
-        text-align: center;
-        background-color: #fff;
-      }
-    
-      .fare-table th {
-        background-color: #f0f0f0;
-        font-size: 16px;
-      }
-    
-      .fare-table tr:nth-child(even) td {
-        background-color: #fafafa;
-      }
-    
-      .fare-table .btn {
-        padding: 6px 14px;
-        font-size: 14px;
-        background-color: #f7c621;
-        color: white;
-        border: none;
-        border-radius: 60px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    
-      .fare-table .btn:hover {
-        background-color: #f7c621;
-      }
-    </style>
-    
-    <div class="fare-table-container">
-      <table class="fare-table">
-        <thead>
-          <tr>
-            <th colspan="3">Pune to Mumbai - One Way</th>
-          </tr>
-          <tr>
-            <th>Car Type</th>
-            <th>Fare</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sedan</td>
-            <td>₹2500</td>
-            <td><a href="#main-form" class="btn book-now-btn" data-value="Sedan Pune-Mumbai">Book Now</a></td>
-          </tr>
-          <tr>
-            <td>Ertiga</td>
-            <td>₹3500</td>
-            <td><a href="#main-form" class="btn book-now-btn" data-value="Ertiga Pune-Mumbai">Book Now</a></td>
-          </tr>
-          <tr>
-            <td>Innova</td>
-            <td>₹4500</td>
-            <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Pune-Mumbai">Book Now</a></td>
-          </tr>
-          <tr>
-            <td>Crysta</td>
-            <td>₹5500</td>
-            <td><a href="#main-form" class="btn book-now-btn" data-value="Innova Crysta Pune-Mumbai">Book Now</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>    
-    
   </section>
 
   <!-- end cabs section -->
@@ -751,7 +668,7 @@
             </h4>
             <form action="https://api.web3forms.com/submit?redirect=https://woxflow.in/success.html" method="post">
               <input type="hidden" name="access_key" value="17b438af-33c4-4bfc-9eab-de72f30cfb0a">
-              <input type="hidden" name="redirect" value="https://5h0xib.github.io/poonawalatravels/success.html">
+              <input type="hidden" name="redirect" value="https://poonawalacabservices.in/success.html">
               <input type="hidden" name="subject" value="Website Contact Request">
               <input name="name" type="text" placeholder="Name">
               <input name="Phone" type="text" placeholder="Phone Number">

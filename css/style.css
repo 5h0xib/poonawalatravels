@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -220,6 +222,9 @@ a:focus {
   font-weight: bold;
   margin-bottom: 0;
   color: #ffffff;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .slider_section .box .detail-box h1 {
@@ -227,6 +232,9 @@ a:focus {
   margin-bottom: 30px;
   text-transform: uppercase;
   font-size: 3rem;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .slider_section .box .img-box {
@@ -256,11 +264,11 @@ a:focus {
 }
 
 .slider_section .slider_form {
-  width: 400px;
   padding: 25px;
   background-color: #282828;
   border-radius: 10px;
   margin: auto;
+  z-index: 100;
 }
 
 .slider_section .slider_form h4 {
@@ -1039,4 +1047,131 @@ a:focus {
 .call-btn:hover {
   color: #fffad7;
   background: #caa11b;
+}
+
+
+.fare-table-container {
+  padding: 35px;
+  padding-top: 50px;
+}
+
+.fare-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+/* main form */
+form select{
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  
+}
+form input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #ffc107;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #a37a00;
+}
+
+.btm_input input {
+  flex: 1;
+}
+
+
+
+/* Table */
+
+/* .fare-table th,
+.fare-table td {
+  padding: 12px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.fare-table th {
+  background-color: #f0f0f0;
+  font-size: 16px;
+}
+
+.fare-table tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.fare-table .btn {
+  padding: 6px 14px;
+  font-size: 14px;
+  background-color: #f7c621;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fare-table .btn:hover {
+  background-color: #f7c621;
+} */
+
+
+
+
+/* Table */
+.fare-table th,
+.fare-table td {
+  padding: 12px;
+  text-align: center;
+  background-color: #131313;
+  color: #fff;
+  border-bottom: 1px solid #585858;
+}
+
+.fare-table th {
+  background-color: #272727;
+  font-size: 16px;
+  border: none;
+}
+
+.fare-table tr:nth-child(even) td {
+  background-color: #242424;
+}
+
+.fare-table .btn {
+  padding: 6px 14px;
+  font-size: 14px;
+  background-color: #f7c621;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 0px 0px 12px #000000;
+  border: 1px solid #f7c621;
+}
+
+.fare-table .btn:hover {
+  background-color: #816813;
+  border: 1px solid #f7c621;
 }
