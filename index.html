@@ -245,18 +245,24 @@
                 </div>
               </div>
               
-              <div style="display: flex; justify-content: center; align-items: center;">
+              <!-- <div style="display: flex; justify-content: center; align-items: center;">
                 <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(-10px);"></div>
-              </div>
+              </div> -->
 
               <div class="btm_input">
                 <input name="phone" type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
                 <button type="submit">Book Now</button>
               </div>
 
-              <!-- <div style="display: flex; justify-content: center; align-items: center;">
+              <div style="display: flex; justify-content: center; align-items: center;">
                 <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(20px);"></div>
-              </div> -->
+              </div>
+
+              <div class="captcha-conformation">
+                <p style="color: #530000; text-align: center; margin-top: 10px; background-color: rgb(255, 212, 212);border-radius: 6px; border: 1px solid rgb(63, 0, 0); padding: 10px; transform: translateY(10px);">
+                  Please Complete the Captcha
+                </p>
+              </div>
               
             </form>
           </div>
@@ -1047,17 +1053,25 @@
 
 
   
+
 // captcha
 const form = document.getElementById('cabBookingForm');
+const captchaMessage = document.querySelector('.captcha-conformation');
+
+// Hide captcha message initially
+captchaMessage.style.display = 'none';
 
 form.addEventListener('submit', function(e) {
   const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]');
   
   if (!hCaptchaResponse || !hCaptchaResponse.value) {
     e.preventDefault();
-    alert("Please complete the captcha verification");
+    captchaMessage.style.display = 'block';
     return;
   }
+  
+  // Hide message if captcha is completed
+  captchaMessage.style.display = 'none';
   
   // Add loading state
   const submitBtn = form.querySelector('button[type="submit"]');
