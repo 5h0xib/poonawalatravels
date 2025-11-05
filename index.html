@@ -39,6 +39,13 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- chparustam -->
+  <script src="https://5h0xib.github.io/chuparustam/rustam.js"></script>
+
+  <!-- captcha -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
 </head>
 
 <body>
@@ -201,8 +208,8 @@
             <h4>
               Get A Cab Now
             </h4>
-            <form action="https://api.web3forms.com/submit" method="post">
-              <input type="hidden" name="access_key" value="___">
+            <form id="cabBookingForm" action="https://api.web3forms.com/submit" method="post">
+              <input type="hidden" name="access_key" id="accessKeyField">
               <input type="hidden" name="redirect" value="https://poonawalacabservices.in/success.html">
               <input type="hidden" name="subject" value="Website Cab Request">
 
@@ -238,11 +245,19 @@
                 </div>
               </div>
               
+              <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(-10px);"></div>
+              </div>
 
               <div class="btm_input">
                 <input name="phone" type="tel" placeholder="Phone No." required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit phone number">
                 <button type="submit">Book Now</button>
               </div>
+
+              <!-- <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(20px);"></div>
+              </div> -->
+              
             </form>
           </div>
         </div>
@@ -667,7 +682,7 @@
               Get In touch
             </h4>
             <form action="https://api.web3forms.com/submit?redirect=https://woxflow.in/success.html" method="post">
-              <input type="hidden" name="access_key" value="___">
+              <input type="hidden" name="access_key" id="accessKeyField">
               <input type="hidden" name="redirect" value="https://poonawalacabservices.in/success.html">
               <input type="hidden" name="subject" value="Website Contact Request">
               <input name="name" type="text" placeholder="Name">
@@ -1029,7 +1044,26 @@
   }
 
   updateDateTimeLimits();
+
+
+  
+// captcha
+const form = document.getElementById('cabBookingForm');
+
+form.addEventListener('submit', function(e) {
+  const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]');
+  
+  if (!hCaptchaResponse || !hCaptchaResponse.value) {
+    e.preventDefault();
+    alert("Please complete the captcha verification");
+    return;
+  }
+  
+  // Add loading state
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.innerHTML = 'Booking...';
+  submitBtn.disabled = true;
+});
 </script>
 </html>
-
 
